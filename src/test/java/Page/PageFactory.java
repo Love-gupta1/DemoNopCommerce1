@@ -6,6 +6,7 @@ public class PageFactory {
     private Computer computer;
     private Login login;
     private Electronics electronics;
+    private Apparel apparel;
     public PageFactory(WebDriver driver) {
         this.driver = driver;
     }
@@ -29,10 +30,17 @@ public class PageFactory {
         }
         return  login;
     }
-    public Electronics electronics() {
+    public Electronics getElectronics() {
         if (electronics == null) {
             electronics = new Electronics(driver);
         }
         return electronics;
     }
+    public Apparel getApparel() {
+        if (apparel == null) {
+            apparel = new Apparel(driver);
+        }
+        return apparel;
+    }
+
 }
