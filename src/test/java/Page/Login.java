@@ -19,7 +19,7 @@ public class Login {
     }
 
     public void login() throws IOException {
-        path = System.getProperty("user.dir") + "//src//main//java//NopCommerceDemo//Reports//Credential.xlsx";
+        path = System.getProperty("user.dir") + "C:\\Users\\LoveGupta\\IdeaProjects\\DemoNopCommerce1\\src\\test\\java\\TestData";
         FileInputStream prop1 = null;
         try {
             prop1 = new FileInputStream(path);
