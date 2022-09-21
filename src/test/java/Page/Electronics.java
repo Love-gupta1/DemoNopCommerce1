@@ -13,6 +13,10 @@ public class Electronics {
 
     By electronic = By.linkText("Electronics");
     By cellPhones = By.linkText("Cell phones");
+    By cameraAndPhotos = By.linkText("Camera & photo");
+    By verifyCameraAndPhotos = By.xpath("//div[@class='product-item']");
+    By nikonCamera =By.linkText("Nikon D5500 DSLR");
+    By nikonCameraAddButton = By.xpath("//button[@type='button' and @id='add-to-cart-button-14']");
     By verifyCellProducts = By.xpath("//div[@class='picture']");
     By addToCartCellFirstProduct = By.xpath("//button[@onclick='return AjaxCart.addproducttocart_catalog(\"/addproducttocart/catalog/18/1/1\"),!1']");
     By shoppingCart = By.linkText("Shopping cart");
@@ -44,5 +48,17 @@ public class Electronics {
 
     public void billing(){
         driver.findElement(billingButton).click();
+    }
+    public void addCamera() {
+        driver.findElement(electronic).click();
+        driver.findElement(cameraAndPhotos).click();
+        List<WebElement> objectDetails = driver.findElements(verifyCameraAndPhotos);
+        number = objectDetails.size();
+        Assert.assertEquals(number, 3);
+        driver.findElement(nikonCamera).click();
+        driver.findElement(nikonCameraAddButton).click();
+        driver.findElement(shoppingCart).click();
+        driver.findElement(radioButtonInput).click();
+        driver.findElement(checkoutButton).click();
     }
 }
